@@ -44,7 +44,7 @@ A personal portfolio website to showcase my technical skills, featured projects,
 
 ```bash
 git clone https://github.com/Gopikrish-30/Personal-portfolio.git
-cd portfolio
+cd Personal-portfolio
 ```
 ```bash
 pnpm install 
