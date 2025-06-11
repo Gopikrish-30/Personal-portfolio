@@ -14,16 +14,17 @@ A personal portfolio website to showcase my technical skills, featured projects,
 
 ## 📁 Folder Structure
 
+```
 .
-├── app/ # App directory (Next.js routing)
-│ ├── globals.css # Global styles
-│ ├── layout.tsx # App layout wrapper
-│ └── page.tsx # Homepage
-├── components/ # Reusable UI components
-├── hooks/ # Custom React hooks
-├── lib/ # Utility functions or external services
-├── public/ # Static assets (images, favicon, etc.)
-├── styles/ # Tailwind or custom styles
+├── app/                 # App directory (Next.js routing)
+│   ├── globals.css      # Global styles
+│   ├── layout.tsx       # App layout wrapper
+│   └── page.tsx         # Homepage
+├── components/          # Reusable UI components
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions or external services
+├── public/              # Static assets (images, favicon, etc.)
+├── styles/              # Tailwind or custom styles
 ├── .gitignore
 ├── components.json
 ├── next.config.mjs
@@ -31,8 +32,9 @@ A personal portfolio website to showcase my technical skills, featured projects,
 ├── pnpm-lock.yaml
 ├── postcss.config.mjs
 ├── tailwind.config.ts
-├── tsconfig.json
-└── ...
+└── tsconfig.json
+```
+
 
 ---
 
@@ -43,7 +45,10 @@ A personal portfolio website to showcase my technical skills, featured projects,
 ```bash
 git clone https://github.com/Gopikrish-30/Personal-portfolio.git
 cd portfolio
-
+```
+```bash
 pnpm install 
-
+```
+```bash
 pnpm dev
+```
