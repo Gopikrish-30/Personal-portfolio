@@ -8,53 +8,57 @@ const STACK_LAYERS = [
     layer: 'L0',
     name: 'CORE LANGUAGES',
     color: 'amber' as const,
-    items: ['Python', 'SQL', 'Java'],
+    items: ['Python', 'SQL', 'R'],
   },
   {
     layer: 'L1',
-    name: 'BACKEND & APIs',
+    name: 'MACHINE LEARNING',
     color: 'steel' as const,
-    items: ['FastAPI', 'REST API Design', 'Redis', 'Celery'],
+    items: ['Deep Learning', 'NLP', 'Model Evaluation', 'Hyperparameter Optimization'],
   },
   {
     layer: 'L2',
-    name: 'DATA LAYER',
+    name: 'LLM & AI SYSTEMS',
     color: 'moss' as const,
-    items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Pandas / NumPy'],
+    items: ['RAG', 'LLM Fine-Tuning', 'AI Agents', 'LangChain'],
   },
   {
     layer: 'L3',
-    name: 'AI / ML',
+    name: 'STATISTICS & ANALYSIS',
     color: 'amber' as const,
-    items: ['OpenAI API / GPT-4o', 'LangChain', 'Vector Databases', 'Scikit-learn', 'PyTorch / TensorFlow'],
+    items: ['Statistical Analysis', 'Hypothesis Testing', 'Probability', 'EDA'],
   },
   {
     layer: 'L4',
-    name: 'INFRA & OBSERVABILITY',
+    name: 'FRAMEWORKS',
     color: 'steel' as const,
-    items: ['Docker', 'Prometheus', 'Git'],
+    items: ['React', 'Node.js', 'Flask', 'FastAPI', 'Django'],
   },
   {
     layer: 'L5',
-    name: 'CLOUD PLATFORMS',
+    name: 'LIBRARIES',
     color: 'moss' as const,
-    items: ['Azure', 'AWS', 'GCP'],
+    items: ['Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'PyTorch'],
+  },
+  {
+    layer: 'L6',
+    name: 'TOOLS & PLATFORMS',
+    color: 'amber' as const,
+    items: ['Git', 'Docker', 'AWS', 'Google Cloud Platform', 'MCPs'],
   },
 ]
 
 const COLOR_MAP: Record<string, { text: string; border: string; bg: string; glow: string }> = {
-  amber: { text: 'text-amber', border: 'border-amber/20', bg: 'bg-amber/8', glow: 'hover:shadow-[0_0_12px_rgba(224,123,57,0.08)]' },
+  amber: { text: 'text-amber', border: 'border-amber/20', bg: 'bg-amber/8', glow: 'hover:shadow-[0_0_12px_rgba(18,183,106,0.12)]' },
   steel: { text: 'text-steel', border: 'border-steel/20', bg: 'bg-steel/8', glow: 'hover:shadow-[0_0_12px_rgba(74,127,165,0.08)]' },
-  moss: { text: 'text-moss', border: 'border-moss/20', bg: 'bg-moss/8', glow: 'hover:shadow-[0_0_12px_rgba(122,162,84,0.08)]' },
+  moss: { text: 'text-moss', border: 'border-moss/20', bg: 'bg-moss/8', glow: 'hover:shadow-[0_0_12px_rgba(31,122,76,0.12)]' },
 }
 
 const CERTS = [
-  { name: 'Snowflake Data Warehousing', issuer: 'Snowflake' },
-  { name: 'Developing Serverless Solutions on AWS', issuer: 'AWS' },
-  { name: 'Supervised ML: Regression and Classification', issuer: 'DeepLearning.AI' },
-  { name: 'Full-stack Development', issuer: 'Udemy' },
-  { name: 'Intro to Deep Learning', issuer: 'DataCamp' },
-  { name: 'PyTorch Workshop', issuer: 'IETE' },
+  { name: 'Machine Learning with Python', issuer: 'IBM' },
+  { name: 'Generative AI with Large Language Models', issuer: 'DeepLearning.AI' },
+  { name: 'Probability and Statistics using Python', issuer: 'Infosys' },
+  { name: 'Data Analytics with Excel', issuer: 'Microsoft' },
 ]
 
 function LayerPanel({ layer, index }: { layer: typeof STACK_LAYERS[0]; index: number }) {
@@ -120,14 +124,14 @@ export default function Stack() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-xs text-amber/60 tracking-[0.4em]">MODULE // 02</span>
+            <span className="font-mono text-xs text-amber/60 tracking-[0.4em]">MODULE // 03</span>
             <div className="h-px w-16 bg-amber/20" />
           </div>
           <h2 className="font-display text-5xl md:text-7xl text-cream tracking-widest">
-            SYSTEM<br /><span className="text-amber">STACK</span>
+            MODEL<br /><span className="text-amber">STACK</span>
           </h2>
           <p className="mt-6 font-mono text-sm text-cream-dim/50 max-w-xl leading-relaxed">
-            Organized by system layer — from language primitives to cloud infrastructure.
+            AI/ML engineering stack from data foundations to LLMs and deployment.
           </p>
         </motion.div>
 

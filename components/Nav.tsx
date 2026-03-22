@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navItems = [
-  { id: 'projects', label: 'ACTIVE OPS', index: '01' },
-  { id: 'stack', label: 'STACK', index: '02' },
-  { id: 'processes', label: 'PARALLEL PROCESSES', index: '03' },
-  { id: 'systems', label: 'SYSTEMS', index: '04' },
+  { id: 'hero', label: 'PROFILE', index: '01' },
+  { id: 'projects', label: 'PROJECTS', index: '02' },
+  { id: 'stack', label: 'SKILLS', index: '03' },
+  { id: 'achievements', label: 'ACHIEVEMENTS', index: '04' },
   { id: 'contact', label: 'CONNECT', index: '05' },
 ]
 
@@ -56,7 +56,7 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-amber rounded-full status-active" />
             <span className="font-mono text-xs text-cream-dim tracking-widest uppercase">
-              SYS://KUNDHAVE_S
+              SYS://GOPI_M
             </span>
           </div>
 

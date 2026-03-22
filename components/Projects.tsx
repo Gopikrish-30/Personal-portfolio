@@ -5,88 +5,132 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 
 const PROJECTS = [
   {
-    id: 'custos',
-    status: 'IN PROGRESS',
-    statusLabel: 'BUILD',
-    statusTooltip: 'Active development — pre-release',
+    id: 'eng-tamil-llm',
+    status: 'DEPLOYED',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'Live on Hugging Face',
     statusColor: 'amber',
-    name: 'CUSTOS',
-    subtitle: 'Pre-Trade Risk & Regulatory Intelligence Platform',
-    class: 'FINTECH / COMPLIANCE',
-    version: 'v0.8.2-alpha',
-    uptime: 'IN PROGRESS',
-    stack: ['Azure Event Hubs', 'Azure Functions', 'GPT-4o', 'RAG', 'Redis', 'Python', 'Entra ID'],
-    description: 'Cloud-native, event-driven pre-trade risk engine on Microsoft Azure. Intercepts and validates institutional trade orders using stateless Functions with sub-millisecond deterministic checks for fat-finger errors and position limits. Shipped a shadow-mode anomaly detection layer (Isolation Forest + Autoencoder) that runs fully isolated from core validation logic, enabling safe ML experimentation without production risk.',
+    name: 'ENGLISH-TAMIL LLM',
+    subtitle: 'Machine Translation with M2M100',
+    class: 'NLP / LLM',
+    version: 'v1.0',
+    uptime: 'LIVE',
+    stack: ['Python', 'Transformers', 'M2M100', 'Hugging Face'],
+    description: 'Fine-tuned a translation model for English to Tamil with a clean data pipeline and evaluation checks.',
     modules: [
-      { name: 'Risk Engine', status: 'active', detail: 'Sub-ms fat-finger + position limit checks' },
-      { name: 'Regulatory AI', status: 'active', detail: 'RAG-powered SEC/FINRA PDF extraction' },
-      { name: 'Audit Trail', status: 'active', detail: 'WORM-policy immutable Golden Record' },
-      { name: 'Zero-Trust Auth', status: 'active', detail: 'Microsoft Entra ID enforcement' },
-      { name: 'Anomaly Detection', status: 'active', detail: 'Shadow-mode Isolation Forest + Autoencoder — isolated from core validation' },
+      { name: 'Dataset Prep', status: 'active', detail: 'Cleaned and aligned parallel corpora' },
+      { name: 'Fine-Tuning', status: 'active', detail: 'Seq2seq training with M2M100' },
+      { name: 'Evaluation', status: 'active', detail: 'Quality checks on real-world samples' },
     ],
-    highlight: 'AI-driven compliance automation — reducing regulatory update latency from days to minutes.',
+    highlight: 'Translation pipeline designed for practical usage scenarios.',
+    codeUrl: 'https://huggingface.co/gopi30/english-to-tamil-stage5',
   },
   {
-    id: 'relay',
-    status: 'STABLE',
-    statusLabel: 'BUILD',
-    statusTooltip: 'Architecture complete — production-grade reliability verified',
+    id: 'quizzy-ai',
+    status: 'LIVE',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'Deployed on Vercel',
     statusColor: 'moss',
-    name: 'RELAY',
-    subtitle: 'Fault-Tolerant Distributed Webhook Orchestrator',
-    class: 'INFRA / PAYMENTS',
-    version: 'v1.2.0',
-    uptime: '99.94%',
-    stack: ['FastAPI', 'PostgreSQL', 'Redis', 'Celery', 'Docker', 'Prometheus'],
-    description: 'Fault-tolerant event delivery system for asynchronous notification of external services across payment lifecycle events. Decoupled architecture with durable event persistence and instrumented delivery pipeline.',
+    name: 'QUIZZY',
+    subtitle: 'AI-Powered Quiz Generation App',
+    class: 'AI / PRODUCT',
+    version: 'v1.2',
+    uptime: 'ONLINE',
+    stack: ['Vite', 'Gemini API', 'TypeScript', 'Vercel'],
+    description: 'Built a quiz platform that converts uploaded documents into structured questions using Gemini models.',
     modules: [
-      { name: 'Event Bus', status: 'active', detail: 'Decoupled event creation from delivery' },
-      { name: 'Worker Pool', status: 'active', detail: 'Redis-backed Celery with exponential backoff' },
-      { name: 'DLQ Handler', status: 'active', detail: 'Dead-letter handling for unreliable endpoints' },
-      { name: 'Observability', status: 'active', detail: 'Prometheus latency, retry, failure metrics' },
+      { name: 'File Parsing', status: 'active', detail: 'PDF/DOCX/PPTX ingestion' },
+      { name: 'Question Gen', status: 'active', detail: 'MCQ creation with explanations' },
+      { name: 'Inference Flow', status: 'active', detail: 'Prompting and response shaping' },
     ],
-    highlight: 'At-least-once delivery semantics with idempotency keys — zero duplicate payment events.',
+    highlight: 'Turns study material into interactive quizzes with explanations.',
+    codeUrl: 'https://github.com/Gopikrish-30/Quizzy-AI-Powered-Quiz-App',
+    liveUrl: 'https://quizzy-app-gopi30.vercel.app/',
   },
   {
-    id: 'entitled',
-    status: 'OPERATIONAL',
-    statusLabel: 'SYSTEM',
-    statusTooltip: 'All security modules verified and operational',
-    statusColor: 'moss',
-    name: 'ENTITLED',
-    subtitle: 'Secure Privileged Access Management System',
-    class: 'SECURITY / FINTECH',
-    version: 'v1.0.4',
-    uptime: '99.98%',
-    stack: ['FastAPI', 'PostgreSQL', 'SQLAlchemy', 'JWT', 'TOTP MFA'],
-    description: 'Security-focused PAM backend implementing role-based access control for sensitive financial vault data. Zero-trust architecture with just-in-time access provisioning.',
-    modules: [
-      { name: 'RBAC Engine', status: 'active', detail: 'Role-based financial vault access control' },
-      { name: 'JIT Provisioner', status: 'active', detail: 'Admin-approved time-bound sessions' },
-      { name: 'MFA Layer', status: 'active', detail: 'TOTP for privileged action enforcement' },
-      { name: 'Audit Logger', status: 'active', detail: 'Immutable access request trail' },
-    ],
-    highlight: 'Automatic access revocation — privilege escalation with zero standing permissions.',
-  },
-  {
-    id: 'techtrendgpt',
-    status: 'ACTIVE',
-    statusLabel: 'MODULE',
-    statusTooltip: 'RAG pipeline and inference engine running',
+    id: 'navigator',
+    status: 'OPEN SOURCE',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'Desktop AI coworker',
     statusColor: 'steel',
-    name: 'TECHTRENDGPT',
-    subtitle: 'RAG-Based Technology Intelligence Chatbot',
-    class: 'AI / NLP',
-    version: 'v2.1.0',
-    uptime: '99.80%',
-    stack: ['Next.js', 'TypeScript', 'LangChain', 'Vector DB', 'OpenAI API'],
-    description: 'Retrieval-Augmented Generation chatbot for real-time technology discourse and news analysis. Vector similarity search over indexed tech articles with streaming AI responses.',
+    name: 'NAVIGATOR',
+    subtitle: 'Privacy-first AI automation assistant',
+    class: 'DESKTOP / AI',
+    version: 'v1.0',
+    uptime: 'ACTIVE',
+    stack: ['Electron', 'React', 'TypeScript', 'Playwright'],
+    description: 'Local-first AI automation assistant that runs on-device, handling browser tasks, file management, and document creation with encrypted local keys.',
     modules: [
-      { name: 'RAG Pipeline', status: 'active', detail: 'Vector similarity over tech article corpus' },
-      { name: 'Stream Engine', status: 'active', detail: 'Streaming responses with markdown render' },
-      { name: 'Content Sync', status: 'active', detail: 'Automated article indexing + time-awareness' },
+      { name: 'Agent Core', status: 'active', detail: 'Local orchestration and task routing' },
+      { name: 'Browser Ops', status: 'active', detail: 'Playwright-driven automation' },
+      { name: 'Security', status: 'active', detail: 'AES-256-GCM key storage' },
     ],
-    highlight: 'Context-aware responses grounded in recent tech articles — not just training data.',
+    highlight: 'Full local execution with user-controlled AI providers.',
+    codeUrl: 'https://github.com/Gopikrish-30/NeoVerse-26',
+  },
+  {
+    id: 'mentora',
+    status: 'HACKATHON',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'Code O Clock winner',
+    statusColor: 'amber',
+    name: 'MENTORA',
+    subtitle: 'AI Course Creator',
+    class: 'EDTECH / RAG',
+    version: 'v1.0',
+    uptime: 'ACTIVE',
+    stack: ['LangChain', 'ChromaDB', 'Gemini', 'PyMuPDF'],
+    description: 'AI platform that generates structured courses from text, PDFs, and videos with configurable lesson formats and assessments.',
+    modules: [
+      { name: 'Extraction', status: 'active', detail: 'PDF and web content parsing' },
+      { name: 'Orchestration', status: 'active', detail: 'LangChain workflow pipeline' },
+      { name: 'RAG', status: 'active', detail: 'Vector storage and retrieval' },
+    ],
+    highlight: 'Built for faster, reusable corporate training content.',
+    codeUrl: 'https://github.com/Gopikrish-30/Mentora',
+  },
+  {
+    id: 'legalsafe',
+    status: 'MODEL CARD',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'Safety-aligned legal LLM',
+    statusColor: 'moss',
+    name: 'LEGALSAFE-FALCON-7B',
+    subtitle: 'Safety-aligned legal LLM',
+    class: 'LLM / SAFETY',
+    version: 'v1.0',
+    uptime: 'PUBLISHED',
+    stack: ['Falcon-7B', 'RLAIF', 'Constitutional AI', 'HF Hub'],
+    description: 'Safety-aligned LLM fine-tuned for the Indian legal domain with reduced toxic and unsafe outputs.',
+    modules: [
+      { name: 'Alignment', status: 'active', detail: 'RLAIF and constitutional prompts' },
+      { name: 'Safety Eval', status: 'active', detail: 'Bias and risk checks' },
+      { name: 'Model Card', status: 'active', detail: 'Usage boundaries and guidance' },
+    ],
+    highlight: 'Focused on safe legal QA and summarization.',
+    codeUrl: 'https://huggingface.co/gopi30/rlaif-safety-alligned',
+  },
+  {
+    id: 'gitsy',
+    status: 'EXTENSION',
+    statusLabel: 'PROJECT',
+    statusTooltip: 'VS Code extension',
+    statusColor: 'steel',
+    name: 'GITSY',
+    subtitle: 'AI-Powered Git Helper for VS Code',
+    class: 'DEVTOOLS / AI',
+    version: 'v1.0',
+    uptime: 'RELEASED',
+    stack: ['VS Code API', 'TypeScript', 'Copilot', 'Gemini'],
+    description: 'AI-powered Git extension with pre-flight checks for secrets, branch safety, and code quality inside VS Code.',
+    modules: [
+      { name: 'Pre-flight', status: 'active', detail: 'Secrets and safety checks' },
+      { name: 'Fast Push', status: 'active', detail: 'Stage, commit, push flow' },
+      { name: 'Dashboard', status: 'active', detail: 'Repo status and history' },
+    ],
+    highlight: 'Local-only analysis with secure VS Code storage.',
+    codeUrl: 'https://github.com/Gopikrish-30/Gitsy',
+    liveUrl: 'https://marketplace.visualstudio.com/items?itemName=Gitsy.gitsy',
   },
 ]
 
@@ -116,7 +160,7 @@ function ProjectPanel({ project, index }: { project: typeof PROJECTS[0]; index: 
   return (
     <motion.div
       ref={ref}
-      className="relative border border-cream-faint/10 bg-charcoal-2 hover:border-cream-faint/25 transition-all duration-300"
+      className="relative border border-cream-faint/30 bg-charcoal-2 hover:border-cream-faint/50 transition-all duration-300 shadow-[0_0_0_1px_rgba(42,52,46,0.4)]"
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -144,14 +188,14 @@ function ProjectPanel({ project, index }: { project: typeof PROJECTS[0]; index: 
           <span className="font-mono text-xs text-cream-dim/20 flex-shrink-0">{project.version}</span>
         </div>
 
-        <h3 className="font-display text-3xl md:text-4xl text-cream tracking-widest mb-1">
+        <h3 className="font-display text-2xl md:text-3xl text-cream tracking-widest mb-1">
           {project.name}
         </h3>
-        <p className="font-mono text-xs text-cream-dim/50 tracking-wider mb-4">
+        <p className="font-mono text-[11px] text-cream-dim/50 tracking-wider mb-3">
           {project.subtitle}
         </p>
 
-        <p className="font-mono text-xs text-cream/60 leading-relaxed">
+        <p className="font-mono text-[11px] text-cream/60 leading-relaxed">
           {project.description}
         </p>
 
@@ -170,6 +214,29 @@ function ProjectPanel({ project, index }: { project: typeof PROJECTS[0]; index: 
             </span>
           ))}
         </div>
+      </div>
+
+      <div className="px-6 pb-5 flex flex-wrap gap-2">
+        {project.codeUrl && (
+          <a
+            href={project.codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-cream-dim border border-cream-faint/20 px-3 py-1.5 hover:border-amber/50 hover:text-amber transition-colors"
+          >
+            VIEW CODE
+          </a>
+        )}
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs text-charcoal bg-amber px-3 py-1.5 hover:bg-amber-dim transition-colors"
+          >
+            {project.id === 'gitsy' ? 'DOWNLOAD' : 'VIEW LIVE'}
+          </a>
+        )}
       </div>
 
       {/* Expand toggle */}
@@ -238,26 +305,26 @@ export default function Projects() {
           transition={{ duration: 0.6 }}
         >
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-xs text-amber/60 tracking-[0.4em]">MODULE // 01</span>
+            <span className="font-mono text-xs text-amber/60 tracking-[0.4em]">MODULE // 02</span>
             <div className="h-px w-16 bg-amber/20" />
           </div>
           <div className="flex items-end gap-6">
             <h2 className="font-display text-5xl md:text-7xl text-cream tracking-widest">
-              ACTIVE<br /><span className="text-amber">OPERATIONS</span>
+              FEATURED<br /><span className="text-amber">PROJECTS</span>
             </h2>
             <div className="mb-3 hidden md:block">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-moss status-active" />
-                <span className="font-mono text-xs text-moss/70">{PROJECTS.length} SYSTEMS RUNNING</span>
+                <span className="font-mono text-xs text-moss/70">{PROJECTS.length} PROJECTS ACTIVE</span>
               </div>
             </div>
           </div>
           <p className="mt-6 font-mono text-sm text-cream-dim/50 max-w-xl leading-relaxed">
-            Not showcases. Working systems engineered to production standards — with real failure handling, observability, and architectural rigour.
+            Selected work across machine learning, AI products, and web applications.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {PROJECTS.map((project, i) => (
             <ProjectPanel key={project.id} project={project} index={i} />
           ))}

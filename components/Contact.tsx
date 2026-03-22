@@ -4,9 +4,10 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const CONTACT_LINKS = [
-  { label: 'EMAIL', value: 'kundhave05@gmail.com', href: 'mailto:kundhave05@gmail.com', icon: '✉' },
-  { label: 'GITHUB', value: 'github.com/kundhave', href: 'https://github.com', icon: '◈' },
-  { label: 'LINKEDIN', value: 'linkedin.com/in/kundhavesrinivasan', href: 'https://www.linkedin.com/in/kundhavesrinivasan/', icon: '◇' },
+  { label: 'EMAIL', value: 'gopim302004@gmail.com', href: 'mailto:gopim302004@gmail.com', icon: '✉' },
+  { label: 'GITHUB', value: 'github.com/Gopikrish-30', href: 'https://github.com/Gopikrish-30', icon: '◈' },
+  { label: 'HUGGING FACE', value: 'huggingface.co/gopi30', href: 'https://huggingface.co/gopi30', icon: '⬡' },
+  { label: 'LINKEDIN', value: 'linkedin.com/in/gopi-m-181a06249', href: 'https://www.linkedin.com/in/gopi-m-181a06249/', icon: '◇' },
 ]
 
 export default function Contact() {
@@ -15,7 +16,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false)
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('kundhave05@gmail.com')
+    navigator.clipboard.writeText('gopim302004@gmail.com')
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
@@ -47,7 +48,7 @@ export default function Contact() {
 
               <div className="mb-10">
                 <p className="font-mono text-sm text-cream-dim/50 leading-relaxed">
-                  Backend & systems engineering — architecture to production.
+                  Data science student focused on ML, NLP, and AI-driven products.
                 </p>
               </div>
 
@@ -55,7 +56,7 @@ export default function Contact() {
               <div className="space-y-3">
                 {[
                   { label: 'LOCATION', value: 'Tamil Nadu, India', status: 'green' },
-                  { label: 'STATUS', value: 'Open to work', status: 'green' },
+                  { label: 'STATUS', value: 'Open to opportunities', status: 'green' },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${item.status === 'green' ? 'bg-moss status-active' : 'bg-amber status-active'
@@ -119,11 +120,11 @@ export default function Contact() {
           <div className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 bg-amber rounded-full status-active" />
             <span className="font-mono text-xs text-cream-dim/30 tracking-widest">
-              SYS://KUNDHAVE_S — ALL SYSTEMS OPERATIONAL
+              SYS://GOPI_M — ALL SYSTEMS OPERATIONAL
             </span>
           </div>
           <div className="font-mono text-xs text-cream-dim/20">
-            B.TECH CSE · AMRITA VISHWA VIDYAPEETHAM · EXP. 2027
+            DATA SCIENCE STUDENT · COIMBATORE, INDIA
           </div>
         </motion.div>
       </div>

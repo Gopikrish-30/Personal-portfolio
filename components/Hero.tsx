@@ -4,12 +4,28 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const TERMINAL_LINES = [
-  { delay: 0, text: '$ init system_identity --engineer=backend+ai', type: 'cmd' },
-  { delay: 0.8, text: '> loading distributed_systems.core...', type: 'log' },
-  { delay: 1.4, text: '> fault_tolerance: ENABLED', type: 'ok' },
-  { delay: 1.9, text: '> event_driven_arch: ACTIVE', type: 'ok' },
-  { delay: 2.4, text: '> observability: INSTRUMENTED', type: 'ok' },
-  { delay: 2.9, text: '$ status: READY FOR PRODUCTION', type: 'cmd' },
+  { delay: 0, text: '$ init profile --role=ai_ml_engineer', type: 'cmd' },
+  { delay: 0.8, text: '> data_pipeline: READY', type: 'ok' },
+  { delay: 1.4, text: '> model_training: CONFIGURED', type: 'ok' },
+  { delay: 1.9, text: '> llm_finetune: ENABLED', type: 'ok' },
+  { delay: 2.4, text: '> inference_api: AVAILABLE', type: 'ok' },
+  { delay: 2.9, text: '$ status: AVAILABLE', type: 'cmd' },
+]
+
+const HERO_SKILLS = [
+  'Python',
+  'Machine Learning',
+  'Deep Learning',
+  'LLM Engineering',
+  'RAG Systems',
+  'AI Agents',
+  'Model Deployment',
+]
+
+const FOCUS_AREAS = [
+  'Model training, evaluation, and iteration',
+  'LLM fine-tuning and RAG pipelines',
+  'Inference APIs and deployment workflows',
 ]
 
 function TerminalLine({ text, type, delay }: { text: string; type: string; delay: number }) {
@@ -83,7 +99,7 @@ function SystemGrid() {
       {/* Scan line */}
       <motion.div
         className="absolute left-0 right-0 h-px"
-        style={{ background: 'linear-gradient(90deg, transparent, rgba(224,123,57,0.15), transparent)' }}
+        style={{ background: 'linear-gradient(90deg, transparent, rgba(18,183,106,0.15), transparent)' }}
         animate={{ y: ['0vh', '100vh'] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
       />
@@ -115,7 +131,7 @@ export default function Hero() {
           <span className="font-mono text-xs text-amber/60 tracking-wider">ONLINE</span>
         </div>
         <div className="font-mono text-xs text-cream-dim/30">
-          REGION: IN-SOUTH-01
+          REGION: IN-COIMBATORE
         </div>
       </motion.div>
 
@@ -145,7 +161,7 @@ export default function Hero() {
                 ))}
               </div>
               <span className="font-mono text-xs text-amber/70 tracking-[0.3em] uppercase">
-                Identity Module / v2025.1
+                Profile Module / v2025.1
               </span>
             </motion.div>
 
@@ -156,11 +172,11 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.2 }}
             >
               <h1 className="font-display text-7xl md:text-9xl text-cream tracking-widest leading-none">
-                KUNDHAVE S
+                GOPI M
               </h1>
               <div className="flex items-center gap-4 mt-2">
                 <div className="h-px flex-1 bg-amber/20" />
-                <span className="font-mono text-xs text-cream-dim/60 tracking-widest">SYSTEMS ENGINEER</span>
+                <span className="font-mono text-xs text-cream-dim/60 tracking-widest">AI/ML ENGINEER</span>
                 <div className="h-px w-8 bg-amber/20" />
               </div>
             </motion.div>
@@ -173,12 +189,10 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p className="font-mono text-sm md:text-base text-cream/80 leading-relaxed max-w-xl">
-                Backend & AI engineer. Builds production-grade systems that survive failure, scale under load, and ship at velocity.
-              </p>
-              <p className="font-mono text-sm text-cream-dim/60 leading-relaxed max-w-lg">
-                From architecture decisions to deployment, observability, and failure recovery — full ownership, no hand-offs.
+                AI/ML Engineer specializing in end-to-end intelligent systems — from data pipelines and model training to LLM workflows, RAG architectures, and autonomous AI agents, with a focus on scalable deployment.
               </p>
             </motion.div>
+
 
             {/* Availability signal */}
             <motion.div
@@ -187,7 +201,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <span className="font-mono text-xs text-cream-dim/40 tracking-widest">
-                Open to work.
+                Available for AI/ML roles.
               </span>
             </motion.div>
 
@@ -199,7 +213,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <a
-                href="https://mail.google.com/mail/?view=cm&to=kundhave05@gmail.com"
+                href="mailto:gopim302004@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative font-mono text-sm text-charcoal bg-amber px-6 py-3 tracking-wider hover:bg-amber-dim transition-colors duration-200"
@@ -207,7 +221,7 @@ export default function Hero() {
                 <span className="relative z-10">$ INITIATE_CONTACT</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Gopikrish-30"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group font-mono text-sm text-cream-dim border border-cream-faint px-6 py-3 tracking-wider hover:border-amber hover:text-amber transition-all duration-200"
@@ -215,7 +229,7 @@ export default function Hero() {
                 → GITHUB
               </a>
               <a
-                href="https://www.linkedin.com/in/kundhavesrinivasan/"
+                href="https://www.linkedin.com/in/gopi-m-181a06249/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group font-mono text-sm text-cream-dim border border-cream-faint px-6 py-3 tracking-wider hover:border-steel hover:text-steel transition-all duration-200"
@@ -227,7 +241,7 @@ export default function Hero() {
 
           {/* Right: Terminal */}
           <motion.div
-            className="lg:col-span-2"
+            className="lg:col-span-2 space-y-4"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
@@ -249,8 +263,51 @@ export default function Hero() {
                 ))}
               </div>
             </div>
+
+            <div className="border border-cream-faint/10 bg-charcoal-2 p-5">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="font-mono text-xs text-cream-dim/40 border border-cream-faint/20 px-2 py-0.5 tracking-widest">
+                  FOCUS
+                </span>
+                <span className="font-mono text-sm text-cream-dim/60 tracking-[0.2em]">
+                  AREAS
+                </span>
+              </div>
+              <div className="space-y-3">
+                {FOCUS_AREAS.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber" />
+                    <span className="font-mono text-xs text-cream/70 leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        <motion.div
+          className="mt-12 border border-cream-faint/10 bg-charcoal-2 p-6"
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <div className="flex items-center gap-3 mb-5">
+            <span className="font-mono text-xs text-cream-dim/40 border border-cream-faint/20 px-2 py-0.5 tracking-widest">
+              SKILLS
+            </span>
+            <div className="flex-1 h-px bg-cream-faint/10" />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {HERO_SKILLS.map((skill) => (
+              <span
+                key={skill}
+                className="font-mono text-xs text-amber/70 border border-amber/20 bg-amber/5 px-3 py-1.5 tracking-wide"
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
     </section>

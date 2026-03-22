@@ -2,7 +2,6 @@
 
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
-import Systems from '@/components/Systems'
 import Projects from '@/components/Projects'
 import Stack from '@/components/Stack'
 import ParallelProcesses from '@/components/ParallelProcesses'
@@ -16,7 +15,6 @@ export default function Home() {
       <Projects />
       <Stack />
       <ParallelProcesses />
-      <Systems />
       <Contact />
     </main>
   )
