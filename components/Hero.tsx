@@ -221,6 +221,14 @@ export default function Hero() {
                 <span className="relative z-10">$ INITIATE_CONTACT</span>
               </a>
               <a
+                href="/Gopi_Resume_.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group font-mono text-sm text-cream-dim border border-cream-faint px-6 py-3 tracking-wider hover:border-amber hover:text-amber transition-all duration-200"
+              >
+                → RESUME
+              </a>
+              <a
                 href="https://github.com/Gopikrish-30"
                 target="_blank"
                 rel="noopener noreferrer"
